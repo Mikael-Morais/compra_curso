@@ -8,9 +8,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Curso Método - Educação de Qualidade para Seu Futuro",
+  title: "Método - Curso ENEM/UEMA | Redação Nota Máxima",
   description:
-    "Cursos de redação ENEM e UEMA com método comprovado e aprovações garantidas. Aprenda com o Professor William Cutrim.",
+    "Prepare-se para o ENEM e UEMA com o curso que transforma sua redação em nota máxima. Correções personalizadas, aulas ao vivo e suporte completo.",
   generator: "v0.app",
   icons: {
     icon: [
