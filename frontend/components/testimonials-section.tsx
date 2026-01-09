@@ -60,19 +60,19 @@ const testimonials = [
 export function TestimonialsSection() {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--navy)] via-[#1e3a5f] to-[var(--navy)]">
+      <div className="absolute inset-0 bg-linear-to-br from-(--navy) via-[#1e3a5f] to-(--navy)">
         <div className="absolute inset-0 opacity-40">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-[var(--orange)] to-[var(--orange-light)] rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute top-0 left-1/4 w-150 h-600px bg-linear-to-br from-(--orange) to-(--orange-light) rounded-full blur-[120px] animate-pulse"></div>
           <div
-            className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-gradient-to-tl from-[var(--orange-light)] to-[var(--orange)] rounded-full blur-[120px] animate-pulse"
+            className="absolute bottom-0 right-1/4 w-175 h-175 bg-linear-to-tl from-(--orange-light) to-(--orange) rounded-full blur-[120px] animate-pulse"
             style={{ animationDelay: "1.5s" }}
           ></div>
         </div>
         <div className="absolute inset-0 opacity-10">
-          <svg className="absolute top-20 left-10 w-32 h-32 text-[var(--orange)]" viewBox="0 0 100 100">
+          <svg className="absolute top-20 left-10 w-32 h-32 text-(--orange)" viewBox="0 0 100 100">
             <polygon points="50,10 90,90 10,90" stroke="currentColor" strokeWidth="2" fill="none" />
           </svg>
-          <svg className="absolute bottom-20 right-20 w-40 h-40 text-[var(--orange-light)]" viewBox="0 0 100 100">
+          <svg className="absolute bottom-20 right-20 w-40 h-40 text-(--orange-light)" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" fill="none" />
           </svg>
         </div>
@@ -80,13 +80,13 @@ export function TestimonialsSection() {
 
       <div className="relative container mx-auto px-4">
         <div className="text-center mb-16 space-y-6">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--orange)] to-[var(--orange-light)] text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl animate-bounce-subtle">
+          <div className="inline-flex items-center gap-2 bg-linear-to-r from-(--orange) to-(--orange-light) text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl animate-bounce-subtle">
             <Sparkles className="w-5 h-5" />
             HISTÓRIAS DE SUCESSO
           </div>
           <h2 className="text-5xl md:text-7xl font-extrabold text-white text-balance">
             Nossos Alunos{" "}
-            <span className="text-[var(--orange)] inline-block relative">
+            <span className="text-(--orange) inline-block relative">
               Campeões
               <svg
                 className="absolute -bottom-4 left-0 w-full h-6"
@@ -113,7 +113,7 @@ export function TestimonialsSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Evandro - Maior nota ENEM */}
             <div className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-[0_0_60px_rgba(255,140,0,0.5)] transition-all duration-500 hover:-translate-y-2">
-              <div className="relative aspect-[21/10] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border-2 border-[var(--orange)]/30">
+              <div className="relative aspect-21/10 bg-linear-to-br from-white/10 to-white/5 backdrop-blur-sm border-2 border-(--orange)/30">
                 <div className="absolute inset-0">
                   <Image
                     src="/images/evandro-junior.jpeg"
@@ -121,18 +121,18 @@ export function TestimonialsSection() {
                     fill
                     className="object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[var(--navy)]/98 via-[var(--navy)]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-r from-(--navy)/98 via-(--navy)/80 to-transparent" />
                 </div>
 
                 <div className="absolute inset-0 p-8 flex items-center">
                   <div className="space-y-4 text-white max-w-xl">
-                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--orange)] to-[var(--orange-light)] px-4 py-2 rounded-full shadow-lg">
+                    <div className="inline-flex items-center gap-2 bg-linear-to-r from-(--orange) to-(--orange-light) px-4 py-2 rounded-full shadow-lg">
                       <Award className="w-4 h-4" />
                       <span className="text-sm font-bold uppercase">REDAÇÃO ENEM</span>
                     </div>
 
                     <div className="flex items-baseline gap-3">
-                      <span className="text-7xl md:text-8xl font-extrabold text-[var(--orange)] drop-shadow-2xl">
+                      <span className="text-7xl md:text-8xl font-extrabold text-(--orange) drop-shadow-2xl">
                         980
                       </span>
                       <span className="text-2xl text-gray-300 font-medium">pontos</span>
@@ -140,15 +140,15 @@ export function TestimonialsSection() {
 
                     <div className="text-3xl md:text-4xl font-bold drop-shadow-lg">Evandro Júnior</div>
 
-                    <div className="flex items-center gap-2 text-[var(--orange)]">
+                    <div className="flex items-center gap-2 text-(--orange)">
                       <Star className="w-5 h-5 fill-current" />
                       <span className="text-sm font-semibold">MAIOR NOTA</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute top-6 right-6 bg-white text-[var(--navy)] text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2 shadow-xl">
-                  <Star className="w-4 h-4 fill-current text-[var(--orange)]" />
+                <div className="absolute top-6 right-6 bg-white text-(--navy) text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2 shadow-xl">
+                  <Star className="w-4 h-4 fill-current text-(--orange)" />
                   Verificado
                 </div>
               </div>
@@ -156,7 +156,7 @@ export function TestimonialsSection() {
 
             {/* William - CFO-PM Nota 10 */}
             <div className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-[0_0_60px_rgba(255,140,0,0.5)] transition-all duration-500 hover:-translate-y-2">
-              <div className="relative aspect-[21/10] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border-2 border-[var(--orange)]/30">
+              <div className="relative aspect-21/10 bg-linear-to-br from-white/10 to-white/5 backdrop-blur-sm border-2 border-(--orange)/30">
                 <div className="absolute inset-0">
                   <Image
                     src="/images/william-metodo-flag.jpeg"
@@ -164,12 +164,12 @@ export function TestimonialsSection() {
                     fill
                     className="object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[var(--navy)]/98 via-[var(--navy)]/75 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-r from-(--navy)/98 via-(--navy)/75 to-transparent" />
                 </div>
 
                 <div className="absolute inset-0 p-8 flex items-center">
                   <div className="space-y-4 text-white max-w-xl">
-                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--orange)] to-[var(--orange-light)] px-4 py-2 rounded-full shadow-lg">
+                    <div className="inline-flex items-center gap-2 bg-linear-to-r from-(--orange) to-(--orange-light) px-4 py-2 rounded-full shadow-lg">
                       <Award className="w-4 h-4" />
                       <span className="text-sm font-bold uppercase">REDAÇÃO UEMA</span>
                     </div>
@@ -178,22 +178,22 @@ export function TestimonialsSection() {
                       <div className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
                         4º LUGAR CFO-PM
                       </div>
-                      <div className="text-6xl md:text-7xl font-extrabold text-[var(--orange)] drop-shadow-2xl">
+                      <div className="text-6xl md:text-7xl font-extrabold text-(--orange) drop-shadow-2xl">
                         NOTA 10
                       </div>
                     </div>
 
                     <div className="text-3xl md:text-4xl font-bold drop-shadow-lg">William Cutrim</div>
 
-                    <div className="flex items-center gap-2 text-[var(--orange)]">
+                    <div className="flex items-center gap-2 text-(--orange)">
                       <Target className="w-5 h-5" />
                       <span className="text-sm font-semibold">EXCELÊNCIA</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute top-6 right-6 bg-white text-[var(--navy)] text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2 shadow-xl">
-                  <Star className="w-4 h-4 fill-current text-[var(--orange)]" />
+                <div className="absolute top-6 right-6 bg-white text-(--navy) text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2 shadow-xl">
+                  <Star className="w-4 h-4 fill-current text-(--orange)" />
                   Verificado
                 </div>
               </div>
@@ -202,7 +202,7 @@ export function TestimonialsSection() {
 
           {/* William uniformizado - full width */}
           <div className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-[0_0_60px_rgba(255,140,0,0.5)] transition-all duration-500 hover:-translate-y-2">
-            <div className="relative aspect-[24/9] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border-2 border-white/20">
+            <div className="relative aspect-24/9 bg-linear-to-br from-white/10 to-white/5 backdrop-blur-sm border-2 border-white/20">
               <div className="absolute inset-0">
                 <Image
                   src="/images/william-uniform-1.jpeg"
@@ -210,18 +210,18 @@ export function TestimonialsSection() {
                   fill
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--navy)]/95 via-[var(--navy)]/70 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-r from-(--navy)/95 via-(--navy)/70 to-transparent" />
               </div>
 
               <div className="absolute inset-0 p-8 md:p-12 flex items-center">
                 <div className="space-y-6 text-white max-w-2xl">
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--orange)] to-[var(--orange-light)] px-6 py-3 rounded-full shadow-lg">
+                  <div className="inline-flex items-center gap-2 bg-linear-to-r from-(--orange) to-(--orange-light) px-6 py-3 rounded-full shadow-lg">
                     <Award className="w-5 h-5" />
                     <span className="text-sm font-bold uppercase">POLÍCIA MILITAR DO MARANHÃO</span>
                   </div>
 
                   <div className="space-y-3">
-                    <div className="text-5xl md:text-7xl font-extrabold text-[var(--orange)] drop-shadow-2xl">
+                    <div className="text-5xl md:text-7xl font-extrabold text-(--orange) drop-shadow-2xl">
                       APROVADO
                     </div>
                     <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
@@ -231,15 +231,15 @@ export function TestimonialsSection() {
 
                   <div className="text-3xl md:text-4xl font-bold drop-shadow-lg">William Cutrim</div>
 
-                  <div className="flex items-center gap-2 text-[var(--orange)]">
+                  <div className="flex items-center gap-2 text-(--orange)">
                     <Target className="w-6 h-6" />
                     <span className="text-base font-semibold">SONHO REALIZADO</span>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute top-8 right-8 bg-white text-[var(--navy)] text-sm font-bold px-5 py-3 rounded-full flex items-center gap-2 shadow-xl">
-                <Star className="w-5 h-5 fill-current text-[var(--orange)]" />
+              <div className="absolute top-8 right-8 bg-white text-(--navy) text-sm font-bold px-5 py-3 rounded-full flex items-center gap-2 shadow-xl">
+                <Star className="w-5 h-5 fill-current text-(--orange)" />
                 Verificado
               </div>
             </div>
@@ -252,7 +252,7 @@ export function TestimonialsSection() {
                 key={index}
                 className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-[0_0_40px_rgba(255,140,0,0.4)] transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="relative aspect-[3/4] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20">
+                <div className="relative aspect-3/4 bg-linear-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20">
                   <div className="absolute inset-0">
                     <Image
                       src={testimonial.image || "/placeholder.svg"}
@@ -260,18 +260,18 @@ export function TestimonialsSection() {
                       fill
                       className="object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy)]/98 via-[var(--navy)]/60 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-(--navy)/98 via-(--navy)/60 to-transparent" />
                   </div>
 
                   <div className="absolute inset-0 p-4 flex items-end">
                     <div className="space-y-2 text-white w-full">
-                      <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[var(--orange)] to-[var(--orange-light)] px-3 py-1.5 rounded-full shadow-lg">
+                      <div className="inline-flex items-center gap-1.5 bg-linear-to-r from-(--orange) to-(--orange-light) px-3 py-1.5 rounded-full shadow-lg">
                         <Award className="w-3 h-3" />
                         <span className="text-[10px] font-bold uppercase">{testimonial.exam}</span>
                       </div>
 
                       <div className="flex items-baseline gap-1.5">
-                        <span className="text-4xl md:text-5xl font-extrabold text-[var(--orange)]">
+                        <span className="text-4xl md:text-5xl font-extrabold text-(--orange)">
                           {testimonial.score}
                         </span>
                         <span className="text-sm text-gray-300 font-medium">pts</span>
@@ -279,15 +279,15 @@ export function TestimonialsSection() {
 
                       <div className="text-lg md:text-xl font-bold line-clamp-2">{testimonial.name}</div>
 
-                      <div className="flex items-center gap-1.5 text-[var(--orange)]">
+                      <div className="flex items-center gap-1.5 text-(--orange)">
                         <Target className="w-3.5 h-3.5" />
                         <span className="text-[10px] font-semibold">APROVADO</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="absolute top-3 right-3 bg-white text-[var(--navy)] text-[10px] font-bold px-2.5 py-1.5 rounded-full flex items-center gap-1 shadow-lg">
-                    <Star className="w-3 h-3 fill-current text-[var(--orange)]" />
+                  <div className="absolute top-3 right-3 bg-white text-(--navy) text-[10px] font-bold px-2.5 py-1.5 rounded-full flex items-center gap-1 shadow-lg">
+                    <Star className="w-3 h-3 fill-current text-(--orange)" />
                     <span className="hidden md:inline">Verificado</span>
                   </div>
                 </div>
@@ -299,7 +299,7 @@ export function TestimonialsSection() {
         <div className="text-center mt-16 space-y-4">
           <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto">
             <p className="text-3xl md:text-4xl font-extrabold text-white mb-3">
-              Você será o <span className="text-[var(--orange)]">próximo sucesso!</span>
+              Você será o <span className="text-(--orange)">próximo sucesso!</span>
             </p>
             <p className="text-gray-300 text-lg md:text-xl">
               Transforme sua redação e conquiste a aprovação dos seus sonhos

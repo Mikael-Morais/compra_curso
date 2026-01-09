@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/image/logo-metodo.png",
         type: "image/svg+xml",
       },
     ],

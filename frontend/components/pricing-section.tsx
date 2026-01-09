@@ -30,7 +30,7 @@ const plans = [
       "Material premium incluso",
     ],
     popular: true,
-    color: "border-[var(--orange)]",
+    color: "border-(--orange)",
   },
   {
     name: "Plano Premium",
@@ -45,16 +45,16 @@ const plans = [
       "Material premium incluso",
     ],
     popular: false,
-    color: "border-[var(--navy)]",
+    color: "border-(--navy)",
   },
 ]
 
 export function PricingSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 bg-linear-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[var(--navy)]">💰 Escolha Seu Plano</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-(--navy)">💰 Escolha Seu Plano</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">Investimento acessível para transformar seu futuro</p>
         </div>
 
@@ -62,12 +62,11 @@ export function PricingSection() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-3xl shadow-xl border-4 ${plan.color} overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-                plan.popular ? "md:-translate-y-4 ring-4 ring-[var(--orange)]/20" : ""
-              }`}
+              className={`relative bg-white rounded-3xl shadow-xl border-4 ${plan.color} overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${plan.popular ? "md:-translate-y-4 ring-4 ring-(--orange)/20" : ""
+                }`}
             >
               {plan.popular && (
-                <div className="absolute top-0 right-0 bg-[var(--orange)] text-white px-6 py-2 text-sm font-bold rounded-bl-2xl">
+                <div className="absolute top-0 right-0 bg-(--orange) text-white px-6 py-2 text-sm font-bold rounded-bl-2xl">
                   MAIS POPULAR
                 </div>
               )}
@@ -75,15 +74,14 @@ export function PricingSection() {
               <div className="p-8">
                 {/* Icon */}
                 <div
-                  className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
-                    plan.popular ? "bg-[var(--orange)]" : "bg-[var(--navy)]"
-                  }`}
+                  className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${plan.popular ? "bg-(--orange)" : "bg-(--navy)"
+                    }`}
                 >
                   <plan.icon className="w-8 h-8 text-white" />
                 </div>
 
                 {/* Plan name */}
-                <h3 className="text-2xl font-bold mb-2 text-[var(--navy)]">{plan.name}</h3>
+                <h3 className="text-2xl font-bold mb-2 text-(--navy)">{plan.name}</h3>
                 <p className="text-gray-500 mb-6">{plan.subtitle}</p>
 
                 {/* Price */}
@@ -91,7 +89,7 @@ export function PricingSection() {
                   <div className="flex items-baseline gap-1">
                     <span className="text-gray-600 text-xl">R$</span>
                     <span
-                      className={`text-5xl font-bold ${plan.popular ? "text-[var(--orange)]" : "text-[var(--navy)]"}`}
+                      className={`text-5xl font-bold ${plan.popular ? "text-(--orange)" : "text-(--navy)"}`}
                     >
                       {plan.price}
                     </span>
@@ -100,16 +98,15 @@ export function PricingSection() {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-6 leading-relaxed min-h-[4rem]">{plan.description}</p>
+                <p className="text-gray-600 mb-6 leading-relaxed min-h-16">{plan.description}</p>
 
                 {/* Features */}
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
                       <Check
-                        className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                          plan.popular ? "text-[var(--orange)]" : "text-[var(--navy)]"
-                        }`}
+                        className={`w-5 h-5 shrink-0 mt-0.5 ${plan.popular ? "text-(--orange)" : "text-(--navy)"
+                          }`}
                       />
                       <span className="text-gray-700">{feature}</span>
                     </li>
@@ -119,11 +116,10 @@ export function PricingSection() {
                 {/* CTA Button */}
                 <Button
                   size="lg"
-                  className={`w-full text-lg font-bold rounded-full ${
-                    plan.popular
-                      ? "bg-[var(--orange)] hover:bg-[var(--orange-light)] text-white"
-                      : "bg-[var(--navy)] hover:bg-[var(--navy-light)] text-white"
-                  }`}
+                  className={`w-full text-lg font-bold rounded-full ${plan.popular
+                    ? "bg-(--orange) hover:bg-(--orange-light) text-white"
+                    : "bg-(--navy) hover:bg-(--navy-light) text-white"
+                    }`}
                 >
                   Começar Agora
                 </Button>

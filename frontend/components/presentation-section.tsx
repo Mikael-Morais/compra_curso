@@ -25,10 +25,10 @@ const features = [
 
 export function PresentationSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-linear-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[var(--navy)]">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-(--navy)">
             O Curso Mais Completo para sua Aprovação
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -41,12 +41,12 @@ export function PresentationSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-[var(--orange)]"
+              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-(--orange)"
             >
-              <div className="w-14 h-14 bg-[var(--orange)]/10 rounded-xl flex items-center justify-center mb-4">
-                <feature.icon className="w-7 h-7 text-[var(--orange)]" />
+              <div className="w-14 h-14 bg-(--orange)/10 rounded-xl flex items-center justify-center mb-4">
+                <feature.icon className="w-7 h-7 text-(--orange)" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-[var(--navy)]">{feature.title}</h3>
+              <h3 className="text-xl font-bold mb-3 text-(--navy)">{feature.title}</h3>
               <p className="text-gray-600 leading-relaxed">{feature.description}</p>
             </div>
           ))}
