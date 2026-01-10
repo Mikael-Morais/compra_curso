@@ -1,6 +1,55 @@
 import Image from "next/image"
 import { Star, Award, Target, Sparkles } from "lucide-react"
 
+const topScores = [
+  {
+    name: "Evandro Júnior",
+    score: "980",
+    image: "/images/evandro-junior.jpeg",
+  },
+  {
+    name: "William Cutrim",
+    score: "NOTA 10",
+    subtitle: "4º Lugar CFO-PM",
+    image: "/images/william-cutrim1.jpeg",
+  },
+  {
+    name: "Camylla Mendes",
+    score: "980",
+    image: "/images/camylla-mendes1.jpeg",
+  },
+]
+
+const centralHighlight = {
+  name: "William Cutrim",
+  achievement: "APROVADO",
+  subtitle: "Curso de Formação de Oficiais - PM/MA",
+  image: "/images/william-uniform-1.jpeg",
+}
+
+const otherApproved = [
+  {
+    name: "Raíssa Colins",
+    score: "960",
+    image: "/images/raissa-collins.jpeg",
+  },
+  {
+    name: "Evellyn Ferreira",
+    score: "960",
+    image: "/images/evellyn-ferreira.jpeg",
+  },
+  {
+    name: "Camylly Mendes",
+    score: "960",
+    image: "/images/camylly-mendes-2.jpg",
+  },
+  {
+    name: "Taíza Carla",
+    score: "940",
+    image: "/images/taiza-carla.jpeg",
+  },
+]
+
 const testimonials = [
   {
     name: "Evandro Júnior",
@@ -60,7 +109,7 @@ const testimonials = [
 export function TestimonialsSection() {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-br from-(--navy) via-[#1e3a5f] to-(--navy)">
+      <div className="absolute inset-0 bg-linear-to-br from-(--navy) to-(--navy)">
         <div className="absolute inset-0 opacity-40">
           <div className="absolute top-0 left-1/4 w-150 h-600px bg-linear-to-br from-(--orange) to-(--orange-light) rounded-full blur-[120px] animate-pulse"></div>
           <div
@@ -80,10 +129,6 @@ export function TestimonialsSection() {
 
       <div className="relative container mx-auto px-4">
         <div className="text-center mb-16 space-y-6">
-          <div className="inline-flex items-center gap-2 bg-linear-to-r from-(--orange) to-(--orange-light) text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl animate-bounce-subtle">
-            <Sparkles className="w-5 h-5" />
-            HISTÓRIAS DE SUCESSO
-          </div>
           <h2 className="text-5xl md:text-7xl font-extrabold text-white text-balance">
             Nossos Alunos{" "}
             <span className="text-(--orange) inline-block relative">

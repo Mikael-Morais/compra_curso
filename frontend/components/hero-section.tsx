@@ -30,7 +30,7 @@ export function HeroSection() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-(--orange-light) rounded-full blur-3xl" />
       </div>
 
-      <div className="relative container mx-auto px-4 py-12 md:py-20">
+      <div className="relative container mx-auto px-4 pt-12 md:pt-20">
         <div className="flex justify-center">
           <Image
             src="/images/logo-metodo-nfundo.png"
@@ -63,7 +63,7 @@ export function HeroSection() {
           </p>
 
           <div className="bg-linear-to-r from-(--orange) to-(--orange-light) rounded-2xl p-6 max-w-3xl mx-auto shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-white">
               <div className="flex flex-col items-center">
                 <LaptopMinimal className="w-10 h-10 mb-2" />
                 <div className="text-3xl md:text-4xl font-extrabold">100%</div>

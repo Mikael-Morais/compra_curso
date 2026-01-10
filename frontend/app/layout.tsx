@@ -11,15 +11,15 @@ export const metadata: Metadata = {
   title: "Método - Curso ENEM/UEMA | Redação Nota Máxima",
   description:
     "Prepare-se para o ENEM e UEMA com o curso que transforma sua redação em nota máxima. Correções personalizadas, aulas ao vivo e suporte completo.",
-  generator: "v0.app",
+  generator: "mikadev angelodev",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/image/logo-metodo.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/image/logo-metodo.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/image/logo-metodo.png",
   },
 }
 
