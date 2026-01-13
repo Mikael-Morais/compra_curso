@@ -1,45 +1,43 @@
-import http from 'http'
-import app from './app'
-import dotenv from 'dotenv'
-import { connectDatabase, disconnectDatabase } from './data/database'
+import dotenv from 'dotenv';
+dotenv.config({ path: './.env' });
+import http from 'http';
+import app from './app';
+import { connectDatabase, disconnectDatabase } from './data/database';
 
-dotenv.config()
+const PORT = process.env.PORT || 4000;
 
-const PORT = process.env.PORT || 4000
-
-let server: http.Server
+let server: http.Server;
 
 async function start() {
   try {
-    await connectDatabase()
+    await connectDatabase();
 
-    server = http.createServer(app)
+    server = http.createServer(app);
 
     server.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`)
-    })
-
+      console.log(`Server is running on port ${PORT}`);
+    });
   } catch (error) {
-    console.error('Error starting server:', error)
-    process.exit(1)
+    console.error('Error starting server:', error);
+    process.exit(1);
   }
 }
 
 async function shutdown() {
-  console.log('Shutting down server...')
+  console.log('Shutting down server...');
 
   if (server) {
     server.close(async () => {
-      await disconnectDatabase()
-      console.log('Server closed.')
-      process.exit(0)
-    })
+      await disconnectDatabase();
+      console.log('Server closed.');
+      process.exit(0);
+    });
   } else {
-    process.exit(0)
+    process.exit(0);
   }
 }
 
-process.on('SIGINT', shutdown)
-process.on('SIGTERM', shutdown)
+process.on('SIGINT', shutdown);
+process.on('SIGTERM', shutdown);
 
-start()
+start();
