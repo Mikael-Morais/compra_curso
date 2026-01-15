@@ -1,25 +1,25 @@
-import { BookOpen, Video, Award, Users } from "lucide-react"
+import { BookOpen, Video, PenTool, Target } from "lucide-react"
 
 const features = [
   {
+    icon: Target,
+    title: "Foco: ENEM ou UEMA?",
+    description: "Planos de monitoria desenhados especificamente para o edital do seu vestibular prioritário.",
+  },
+  {
+    icon: PenTool,
+    title: "Correção de Redação ao Vivo",
+    description: "Tenha sua redação corrigida em tempo real pelo professor, um diferencial exclusivo para acelerar sua evolução.",
+  },
+  {
     icon: Video,
-    title: "Videoaulas Completas",
-    description: "Conteúdo atualizado conforme os últimos editais do ENEM e UEMA",
+    title: "Monitoria Estratégica",
+    description: "Acompanhamento focado em resolução de questões e revisão objetiva dos conteúdos de maior peso.",
   },
   {
     icon: BookOpen,
-    title: "Correções Personalizadas",
-    description: "Feedback detalhado para evoluir sua escrita a cada redação",
-  },
-  {
-    icon: Award,
-    title: "Simulados Realistas",
-    description: "Questões estilo ENEM/UEMA para testar seus conhecimentos",
-  },
-  {
-    icon: Users,
-    title: "Acompanhamento",
-    description: "Suporte pedagógico e comunidade ativa de estudantes",
+    title: "Metodologia Flexível",
+    description: "Escolha entre focar apenas na Redação ou garantir a preparação completa com as Monitorias.",
   },
 ]
 
@@ -29,11 +29,11 @@ export function PresentationSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-(--navy)">
-            O Curso Mais Completo para sua Aprovação
+            O Método Definitivo para sua Aprovação Online
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Metodologia prática com videoaulas, exercícios personalizados e acompanhamento individual. Tudo que você
-            precisa para dominar a redação do ENEM e UEMA.
+            Seja para o ENEM ou para o PAES UEMA, nossa plataforma oferece a estrutura exata
+            que você precisa: da correção detalhada à monitoria especializada.
           </p>
         </div>
 
