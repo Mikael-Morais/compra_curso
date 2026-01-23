@@ -4,10 +4,13 @@ import { Button } from "@/components/ui/button"
 import { Rocket, Trophy, LaptopMinimal, Headset } from "lucide-react"
 import Image from "next/image"
 
-function arrastar() {
-}
-
 export function HeroSection() {
+  const scrollPricing = () => {
+    const element = document.getElementById("pricing");
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   return (
     <section className="relative overflow-hidden bg-(--navy) text-white">
       {/* Hero imagem background */}
@@ -86,12 +89,12 @@ export function HeroSection() {
           <div className="pt-6">
             <Button
               size="lg"
-              onClick={arrastar}
+              onClick={scrollPricing}
               className="bg-(--orange) hover:bg-(--orange-light) text-white text-lg md:text-xl px-10 py-7 rounded-full font-bold shadow-2xl transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,138,0,0.6)]"
             >
               Garanta Sua Vaga
             </Button>
-            <p className="text-sm text-gray-400 mt-3">Vagas limitadas - Acesso imediato ao material</p>
+            <p className="text-sm text-gray-400 mt-3">Vagas limitadas</p>
           </div>
         </div>
       </div>
