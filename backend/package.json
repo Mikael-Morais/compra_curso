@@ -18,13 +18,15 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@types/axios": "^0.14.4",
+    "axios": "^1.6.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "express-rate-limit": "^8.2.1",
     "helmet": "^8.1.0",
+    "mercadopago": "^2.0.0",
     "morgan": "^1.10.1",
-    "pg": "^8.11.0",
-    "stripe": "^20.1.2"
+    "pg": "^8.11.0"
   }
 }
