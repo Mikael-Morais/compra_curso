@@ -9,8 +9,6 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-//  app.use('/webhooks/stripe', express.raw({ type: 'application/json' }));
-
 const app: Application = express();
 
 // Segurança 
