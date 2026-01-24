@@ -218,12 +218,12 @@ router.delete('/plans/:id', async (req: Request, res: Response) => {
  * }
  */
 router.post('/subscriptions', async (req: Request, res: Response) => {
-	const { preapproval_plan_id, payer_email, card_token, back_url, external_reference } =
+	const { preapproval_plan_id, payer_email, card_token, amount, external_reference } =
 		req.body;
 
-	if (!preapproval_plan_id || !payer_email || !card_token) {
+	if (!preapproval_plan_id || !payer_email || !card_token || !amount) {
 		return res.status(400).json({
-			error: 'Os campos `preapproval_plan_id`, `payer_email` e `card_token` são obrigatórios',
+			error: 'Os campos `preapproval_plan_id`, `payer_email`, `card_token` e `amount` são obrigatórios',
 		});
 	}
 
@@ -232,7 +232,7 @@ router.post('/subscriptions', async (req: Request, res: Response) => {
 			preapproval_plan_id,
 			payer_email,
 			card_token_id: card_token,
-			back_url: back_url || 'https://seu-site.com',
+			transaction_amount: amount / 100,  // Converter centavos para reais
 			external_reference: external_reference || '',
 		};
 
@@ -245,7 +245,7 @@ router.post('/subscriptions', async (req: Request, res: Response) => {
 		return res.json({
 			id: response.data.id,
 			status: response.data.status,
-			init_point: response.data.init_point,
+			amount: response.data.transaction_amount,
 		});
 	} catch (err: any) {
 		console.error('Mercado Pago subscription error:', err.response?.data || err.message);
