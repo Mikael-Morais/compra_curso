@@ -71,7 +71,7 @@ export function PricingSection() {
       <div className="container mx-auto px-4">
         {/* Promo Banner */}
         <div className="max-w-3xl mx-auto mb-12">
-          <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl p-6 md:p-8 text-white shadow-lg">
+          <div className="bg-linear-to-r from-emerald-500 to-teal-500 rounded-2xl p-6 md:p-8 text-white shadow-lg">
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center shrink-0">
                 <Gift className="w-8 h-8" />
