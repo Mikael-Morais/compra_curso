@@ -2,4 +2,7 @@
 .package-lock.json
 .node_modules
 .vscode
+<<<<<<< HEAD
 ./backend/node_modules
+=======
+>>>>>>> f04b1bda68e3f4a35d9dc4e08be1cd0244472d75

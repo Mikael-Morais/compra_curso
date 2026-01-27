@@ -25,7 +25,8 @@ const accessToken = process.env.MERCADOPAGO_ACCESS_TOKEN;
  *   "city": string (cidade),
  *   "state": string (estado, ex: "SP"),
  *   "zipcode": string (CEP sem formatação, ex: "01234567"),
- *   "card_token": string (token do cartão gerado no frontend)
+ *   "card_token": string (token do cartão gerado no frontend),
+ *   "installments": number (número de parcelas, padrão: 1)
  * }
  */
 router.post('/direct', async (req: Request, res: Response) => {
@@ -41,6 +42,7 @@ router.post('/direct', async (req: Request, res: Response) => {
 		state,
 		zipcode,
 		card_token,
+		installments = 1,
 	} = req.body;
 
 	// Validações
@@ -80,7 +82,7 @@ router.post('/direct', async (req: Request, res: Response) => {
 					state_name: state,
 				},
 			},
-			installments: 1,
+			installments: installments,
 		};
 
 		const response = await axios.post(`${MP_API_BASE}/payments`, paymentData, {
@@ -213,28 +215,34 @@ router.delete('/plans/:id', async (req: Request, res: Response) => {
  *   "preapproval_plan_id": string (ID do plano),
  *   "payer_email": string (email do cliente),
  *   "card_token": string (token do cartão gerado no frontend),
+ *   "amount": number (em centavos - valor mensal da assinatura, opcional se plano tem valor fixo),
  *   "back_url": string (URL de retorno, opcional),
  *   "external_reference": string (referência externa, ex: user_id)
  * }
  */
 router.post('/subscriptions', async (req: Request, res: Response) => {
-	const { preapproval_plan_id, payer_email, card_token, amount, external_reference } =
+	const { preapproval_plan_id, payer_email, card_token, amount, back_url, external_reference } =
 		req.body;
 
-	if (!preapproval_plan_id || !payer_email || !card_token || !amount) {
+	if (!preapproval_plan_id || !payer_email || !card_token) {
 		return res.status(400).json({
-			error: 'Os campos `preapproval_plan_id`, `payer_email`, `card_token` e `amount` são obrigatórios',
+			error: 'Os campos `preapproval_plan_id`, `payer_email` e `card_token` são obrigatórios',
 		});
 	}
 
 	try {
-		const subscriptionData = {
+		const subscriptionData: any = {
 			preapproval_plan_id,
 			payer_email,
 			card_token_id: card_token,
-			transaction_amount: amount / 100,  // Converter centavos para reais
+			back_url: back_url || 'https://seu-site.com',
 			external_reference: external_reference || '',
 		};
+
+		// Adicionar valor se fornecido
+		if (amount) {
+			subscriptionData.transaction_amount = amount / 100; // Converter centavos para reais
+		}
 
 		const response = await axios.post(`${MP_API_BASE}/preapproval`, subscriptionData, {
 			headers: {
@@ -245,7 +253,7 @@ router.post('/subscriptions', async (req: Request, res: Response) => {
 		return res.json({
 			id: response.data.id,
 			status: response.data.status,
-			amount: response.data.transaction_amount,
+			init_point: response.data.init_point,
 		});
 	} catch (err: any) {
 		console.error('Mercado Pago subscription error:', err.response?.data || err.message);
